@@ -41,6 +41,7 @@ const (
 	Cloudflare
 	DeepL
 	TogetherAI
+	Copilot
 
 	Dummy
 )

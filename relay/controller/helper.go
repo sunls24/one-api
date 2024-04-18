@@ -216,7 +216,7 @@ func isErrorHappened(meta *meta.Meta, resp *http.Response) bool {
 	if resp.StatusCode != http.StatusOK {
 		return true
 	}
-	if meta.ChannelType == channeltype.DeepL {
+	if meta.ChannelType == channeltype.DeepL || meta.ChannelType == channeltype.Copilot {
 		// skip stream check for deepl
 		return false
 	}

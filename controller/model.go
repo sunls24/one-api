@@ -5,7 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/songquanpeng/one-api/common/ctxkey"
 	"github.com/songquanpeng/one-api/model"
-	relay "github.com/songquanpeng/one-api/relay"
+	"github.com/songquanpeng/one-api/relay"
 	"github.com/songquanpeng/one-api/relay/adaptor/openai"
 	"github.com/songquanpeng/one-api/relay/apitype"
 	"github.com/songquanpeng/one-api/relay/channeltype"
@@ -83,7 +83,7 @@ func init() {
 		}
 	}
 	for _, channelType := range openai.CompatibleChannels {
-		if channelType == channeltype.Azure {
+		if channelType == channeltype.Azure || channelType == channeltype.Copilot {
 			continue
 		}
 		channelName, channelModelList := openai.GetCompatibleChannelMeta(channelType)

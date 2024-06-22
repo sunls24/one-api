@@ -2,6 +2,7 @@ package copilot
 
 import (
 	"fmt"
+	"github.com/songquanpeng/one-api/common/client"
 	"io"
 	"math/rand"
 	"net/http"
@@ -11,7 +12,6 @@ import (
 	"encoding/json"
 	"github.com/pkg/errors"
 	"github.com/songquanpeng/one-api/common/cache"
-	"github.com/songquanpeng/one-api/relay/client"
 )
 
 type auth struct {

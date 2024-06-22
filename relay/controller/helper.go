@@ -75,6 +75,10 @@ func getImageSizeRatio(model string, size string) float64 {
 }
 
 func validateImageRequest(imageRequest *relaymodel.ImageRequest, meta *meta.Meta) *relaymodel.ErrorWithStatusCode {
+	if imageRequest.Model == "stable-diffusion" {
+		return nil
+	}
+
 	// model validation
 	hasValidSize := isValidImageSize(imageRequest.Model, imageRequest.Size)
 	if !hasValidSize {
